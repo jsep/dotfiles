@@ -1,4 +1,4 @@
-git-config
+Config
 ==========
 
-A collecttion of usefull aliases of git 
+A collecttion of usefull configuration for my devops of git 
