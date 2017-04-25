@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+# Append this to ~/.bashrc file
 
-# Append this to ~/.bashrc file 
-
-alias up="source $HOME/.bashrc"
-alias ebs="vim  $HOME/.bashrc"
+# Aliases
+alias up="source $HOME/.bashrc" # Update current session with latest bashrc changes
+alias ebs="vim  $HOME/.bashrc" # Edit bashrc
+alias eh="sudo vim /etc/hosts"
  
 # Show the current branch e.g juan@ubuntu:~/myrepo(master*)$
 function parse_git_dirty {
