@@ -1,4 +1,7 @@
-# Append this to ~/.bashrc file
+
+###############
+# jsep/config #
+###############
 
 # Aliases
 alias up="source $HOME/.bashrc" # Update current session with latest bashrc changes
@@ -16,3 +19,4 @@ function parse_git_branch {
 
 PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$(parse_git_branch)\$ "
 unset color_prompt force_color_prompt
+
