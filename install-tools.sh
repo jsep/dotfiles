@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-
-./install-nodejs.sh
-./install-docker.sh
+source ./console-log.sh
+bash install-nodejs.sh
+bash install-docker.sh
+consoleLog "All tools installed"

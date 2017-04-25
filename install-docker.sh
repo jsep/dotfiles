@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source ./console-log.sh
+
 # Documentation
 # https://docs.docker.com/engine/installation/linux/ubuntu/#install-docker
 
@@ -30,8 +32,6 @@ sudo apt-get update
 sudo apt-get install docker-ce
 sudo groupadd docker
 sudo usermod -aG docker $USER
-echo "======================================================="
-echo "Docker installation completed"
-echo "Log out and log back in so that your group \
+consoleLog "Docker installation completed"
+consoleLog "Log out and log back in so that your group \
  membership is re-evaluated."
-echo "======================================================="
