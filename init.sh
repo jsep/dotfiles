@@ -11,7 +11,7 @@ git clone git@github.com:jsep/config.git ${CONFIG_DIR}
 consoleLog "Config repo clone"
 cd ${CONFIG_DIR}
 # Append custom .bashrc configurations
-cat bashrc-config.sh >> ~/.bashrc
+cat .bashrc >> ~/.bashrc
 consoleLog "Bashrc configs appended"
 
 bash ./install-tools.sh

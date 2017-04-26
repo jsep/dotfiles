@@ -1,12 +1,11 @@
-
-###############
-# jsep/config #
-###############
+#!/usr/bin/env bash
+export JSEP_CONFIG_DIR="$HOME/.jsep-config"
 
 # Aliases
 alias up="source $HOME/.bashrc" # Update current session with latest bashrc changes
-alias ebs="vim  $HOME/.bashrc" # Edit bashrc
-alias eh="sudo vim /etc/hosts"
+alias ebs="vim  $JSEP_CONFIG_DIR/bashrc-config.sh" # Edit bashrc config
+alias ebls="vim  $HOME/.bashrc" # Edit local bashrc
+alias eh="sudo vim /etc/hosts" # Edit localhost file
  
 # Show the current branch e.g juan@ubuntu:~/myrepo(master*)$
 function parse_git_dirty {
