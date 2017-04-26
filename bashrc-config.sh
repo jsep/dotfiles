@@ -6,7 +6,13 @@ alias up="source $HOME/.bashrc" # Update current session with latest bashrc chan
 alias ebs="vim  $JSEP_CONFIG_DIR/bashrc-config.sh" # Edit bashrc config
 alias ebls="vim  $HOME/.bashrc" # Edit local bashrc
 alias eh="sudo vim /etc/hosts" # Edit localhost file
- 
+
+# Pythonz https://github.com/saghul/pythonz 
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+
+ # Virtual env wrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Show the current branch e.g juan@ubuntu:~/myrepo(master*)$
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"

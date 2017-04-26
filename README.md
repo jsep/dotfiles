@@ -8,6 +8,7 @@ Configuration for my linux environments
  - git configuration
  - Docker installation
  - Node.js installation
+ - Pythonz: a Python interpreter manager
  - Powerful bash aliases
  - And more
  
