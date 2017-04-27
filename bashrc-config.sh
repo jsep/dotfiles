@@ -6,7 +6,9 @@ alias up="source $HOME/.bashrc" # Update current session with latest bashrc chan
 alias ebs="vim  $JSEP_CONFIG_DIR/bashrc-config.sh" # Edit bashrc config
 alias ebls="vim  $HOME/.bashrc" # Edit local bashrc
 alias eh="sudo vim /etc/hosts" # Edit localhost file
-
+alias ds="docker stop \$(docker ps -aq)" # Stop all docker containers
+alias du="docker-compose up"
+alias dup="docker-compose up -d"
 # Pythonz https://github.com/saghul/pythonz 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
