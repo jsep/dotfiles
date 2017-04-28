@@ -14,6 +14,8 @@ cd ${CONFIG_DIR}
 cat .bashrc >> ~/.bashrc
 consoleLog "Bashrc configs appended"
 
+bash ./git-config.sh
+bash ./python-config.sh
 bash ./install-tools.sh
 consoleLog "All tools installed"
 # Create repos dir
