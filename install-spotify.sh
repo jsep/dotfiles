@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+source ./console-log.sh
 # https://www.spotify.com/do/download/linux/
 
 # 1. Add the Spotify repository signing key to be able to verify downloaded packages
@@ -12,4 +12,5 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update
 
 # 4. Install Spotify
-sudo apt-get install spotify-client
+sudo apt-get install -y spotify-client
+consoleLog "Spotify succesfully installed"
