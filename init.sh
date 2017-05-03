@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-source console-log.sh
-CONFIG_DIR="$HOME/.js-config"
+CONFIG_DIR="$HOME/.jsep-config"
 
 sudo apt-get update
 # Install dependencies
-#sudo apt-get install vim git wget python-software-properties curl -y
-consoleLog "Packages installed"
+sudo apt-get install vim git wget byobu python-software-properties curl -y
+echo "Packages installed"
 # Clone the config repo
 git clone git@github.com:jsep/config.git ${CONFIG_DIR}
+
+source $CONFIG_DIR/console-log.sh
 consoleLog "Config repo clone"
+
 cd ${CONFIG_DIR}
 # Append custom .bashrc configurations
 cat .bashrc >> ~/.bashrc
