@@ -9,6 +9,7 @@ alias eh="sudo vim /etc/hosts" # Edit localhost file
 alias ds="docker stop \$(docker ps -aq)" # Stop all docker containers
 alias du="docker-compose up"
 alias dup="docker-compose up -d"
+alias drm="docker rm \$(docker ps -aq)"
 # Pythonz https://github.com/saghul/pythonz 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
