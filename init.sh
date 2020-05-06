@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 CONFIG_DIR="$HOME/.jsep-config"
 
-sudo apt-get update
+#sudo apt-get update
 # Install dependencies
-sudo apt-get install vim git wget byobu python-software-properties curl -y
-echo "Packages installed"
+#sudo apt-get install vim git wget byobu python-software-properties curl -y
+#echo "Packages installed"
 # Clone the config repo
 git clone git@github.com:jsep/config.git ${CONFIG_DIR}
 
@@ -14,11 +14,12 @@ consoleLog "Config repo clone"
 cd ${CONFIG_DIR}
 # Append custom .bashrc configurations
 cat .bashrc >> ~/.bashrc
-consoleLog "Bashrc configs appended"
+cat .bashrc >> ~/.zshrc
+consoleLog "shrc configs appended"
 
 bash ./git-config.sh
-bash ./python-config.sh
-bash ./install-tools.sh
+#bash ./python-config.sh
+#bash ./install-tools.sh
 consoleLog "All tools installed"
 # Create repos dir
 mkdir -p ~/repos
