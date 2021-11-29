@@ -6,7 +6,7 @@
 # Configuring git to show colors in console
 git config --global color.ui true
 git config --global core.editor "vim"
-git config --global user.email "juan@sepulveda.do"
+git config --global user.email "me@juan.do"
 git config --global user.name  "Juan Sepulveda"
 
 # Add aliases for basic git commands
