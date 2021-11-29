@@ -1,0 +1,43 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+imap jk <Esc>
+imap kj <Esc>
+
+" go to declaration / find / navitagion
+map gd <Action>(GotoDeclaration)
+map gv <Action>(GotoDeclaration)
+map gm <Action>(FileStructurePopup)
+map gf <Action>(GotoFile)
+map ff <Action>(GotoFile)
+map gs <Action>(GotoSymbol)
+map fs <Action>(GotoSymbol)
+map gc <Action>(GotoClass)
+map fc <Action>(GotoClass)
+
+" Refactor "
+map rn <Action>(RenameElement)
+map rf <Action>(Refactorings.QuickListPopupAction)
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
