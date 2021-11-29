@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-function consoleLog {
-  hashes="##########"
+function _log {
+  hashes"################################################################################"
   echo "$hashes"
   echo "# $1 #"
   echo "$hashes"
 }
-export -f consoleLog
+export -f _log
