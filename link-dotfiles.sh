@@ -2,7 +2,7 @@
 source ./env.sh
 
 function _mv {
-  [ -f "$1" ] && mv "$1" "$2"
+  [ -f "$1" ] && mv "$1" "$2" # move file only if exists
 }
 
 # git
@@ -13,5 +13,6 @@ ln -nfs $CONFIG_DIR/.gitconfig $HOME/.gitconfig
 _mv $HOME/.zshrc $HOME/.zshr_copy
 ln -nfs $CONFIG_DIR/.zshrc $HOME/.zshrc
 
-# Brewfile
-# ln -nfs $CONFIG_DIR/Brewfile $HOME/Brewfile
+# IdeaVim
+_mv $HOME/.ideavimrc $HOME/.ideavimrc_copy
+ln -nfs $CONFIG_DIR/.ideavimrc $HOME/.ideavimrc
