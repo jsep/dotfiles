@@ -14,10 +14,17 @@ map gs <Action>(GotoSymbol)
 map fs <Action>(GotoSymbol)
 map gc <Action>(GotoClass)
 map fc <Action>(GotoClass)
+map F <Action>(SearchEverywhere)
 
 " Refactor "
 map rn <Action>(RenameElement)
 map rf <Action>(Refactorings.QuickListPopupAction)
+map rv <Action>(IntroduceVariable)
+map rm <Action>(ExtractMethod)
+map rc <Action>(Refactorings.QuickListPopupAction)
+
+"Tools"
+nmap t <Action>(ActivateTerminalToolWindow)
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
