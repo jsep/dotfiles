@@ -5,31 +5,55 @@ imap jk <Esc>
 imap kj <Esc>
 
 " go to declaration / find / navitagion
-map gd <Action>(GotoDeclaration)
-map gv <Action>(GotoDeclaration)
-map gm <Action>(FileStructurePopup)
-map gf <Action>(GotoFile)
-map ff <Action>(GotoFile)
-map gs <Action>(GotoSymbol)
-map fs <Action>(GotoSymbol)
+map gb <Action>(Back)
 map gc <Action>(GotoClass)
-map fc <Action>(GotoClass)
+map gd <Action>(GotoDeclaration)
+map gf <Action>(GotoFile)
+map gm <Action>(FileStructurePopup)
+map gn <Action>(Forward)
+map gs <Action>(GotoSymbol)
+map gv <Action>(GotoDeclaration)
+
 map F <Action>(SearchEverywhere)
+map fc <Action>(GotoClass)
+map ff <Action>(GotoFile)
+map fm <Action>(FileStructurePopup)
+map fs <Action>(GotoSymbol)
 
 " Refactor "
-map rn <Action>(RenameElement)
-map rf <Action>(Refactorings.QuickListPopupAction)
-map rv <Action>(IntroduceVariable)
-map rm <Action>(ExtractMethod)
-map rc <Action>(Refactorings.QuickListPopupAction)
+map R <Action>(Refactorings.QuickListPopupAction)
+map Rn <Action>(RenameElement)
+map Rv <Action>(IntroduceVariable)
+map Rm <Action>(ExtractMethod)
+map Rc <Action>(Refactorings.QuickListPopupAction)
+
+"Movements "
+map mv <Action>(Move)
+map mU <Action>(MoveStatementUp)
+map mu <Action>(MoveLineUp)
+map md <Action>(MoveLineDown)
+map mD <Action>(MoveStatementDown)
+
+"Show "
+map sa <Action>(ShowIntentionActions)
+map se <Action>(ShowErrorDescription)
+map st <Action>(ExpressionTypeInfo)
+map sr <Action>(ChooseRunConfiguration)
+
+" Errors "
+map ne <Action>(GotoNextError)
+map nE <Action>(GotoPreviousError)
 
 "Tools"
 nmap t <Action>(ActivateTerminalToolWindow)
 
+"Others"
+nmap z <Action>(EditorSelectWord)
+nmap Z <Action>(EditorUnSelectWord)
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+set scrolloff=999
 
 " Do incremental searching.
 set incsearch
