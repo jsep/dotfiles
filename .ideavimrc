@@ -1,19 +1,45 @@
 "" Source your .vimrc
 "source ~/.vimrc
+set NERDTree
+set surround
+set multiple-cursors
+set commentary
+
+
+set clipboard+=unnamed
+set clipboard+=ideaput
+""" Idea specific settings
+set ideajoin
+set ideamarks
+set ideastatusicon=gray
+set idearefactormode=keep
+set showmode
+set ideavimsupport=dialog
+set relativenumber
+
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 imap jk <Esc>
 imap kj <Esc>
 
+
+"Work mode"
+map SEN <Action>(ToggleFullScreen) <Action>(EditorToggleShowGutterIcons) <Action>(HideActiveWindow)
+
+" Collapse "
+map (( <Action>(CollapseAllRegions)
+map ( <Action>(CollapseRegion)
+map ) <Action>(ExpandRegion)
 " go to declaration / find / navitagion
 map gb <Action>(Back)
-map gc <Action>(GotoClass)
+"map gc <Action>(GotoClass)
 map gd <Action>(GotoDeclaration)
 map gf <Action>(GotoFile)
 map gm <Action>(FileStructurePopup)
 map gn <Action>(Forward)
 map gs <Action>(GotoSymbol)
 map gv <Action>(GotoDeclaration)
-
 map F <Action>(SearchEverywhere)
 map fc <Action>(GotoClass)
 map ff <Action>(GotoFile)
@@ -37,20 +63,25 @@ map mD <Action>(MoveStatementDown)
 "Show "
 map sa <Action>(ShowIntentionActions)
 map se <Action>(ShowErrorDescription)
-map st <Action>(ExpressionTypeInfo)
+map sT <Action>(ExpressionTypeInfo)
 map sr <Action>(ChooseRunConfiguration)
+map sm <Action>(ShowPopupMenu)
+map sd <Action>(QuickJavaDoc)
+map sh <Action>(QuickJavaDoc)
+map si <Action>(CodeCompletion)
 
 " Errors "
 map ne <Action>(GotoNextError)
 map nE <Action>(GotoPreviousError)
 
 "Tools"
-nmap t <Action>(ActivateTerminalToolWindow)
+nmap st <Action>(ActivateTerminalToolWindow)
+map T <Action>(SurroundWithLiveTemplate)
+map t <Action>(de.netnexus.CamelCasePlugin.ToggleCamelCase)
 
 "Others"
-nmap z <Action>(EditorSelectWord)
-nmap Z <Action>(EditorUnSelectWord)
-"" -- Suggested options --
+map z <Action>(EditorSelectWord)
+map Z <Action>(EditorUnSelectWord)
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=999
