@@ -1,2 +1,7 @@
 #!/usr/bin/env zsh
-sudo apt-get install -y wget curl vim zsh fonts-powerline
+
+sudo apt-get update
+
+# Install dependencies
+sudo apt-get install -y wget git curl vim zsh fonts-powerline
+echo "Packages installed"
