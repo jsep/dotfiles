@@ -1,5 +1,5 @@
 "" Source your .vimrc
-"source ~/.vimrc
+source ~/.vimrc
 set NERDTree
 set surround
 set multiple-cursors
@@ -19,9 +19,6 @@ set relativenumber
 
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
-
-imap jk <Esc>
-imap kj <Esc>
 
 
 "Work mode"
