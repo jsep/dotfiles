@@ -16,3 +16,11 @@ ln -nfs $CONFIG_DIR/.zshrc $HOME/.zshrc
 # IdeaVim
 _mv $HOME/.ideavimrc $HOME/.ideavimrc_copy
 ln -nfs $CONFIG_DIR/.ideavimrc $HOME/.ideavimrc
+
+# Brewfile
+_mv $HOME/Brewfile $HOME/Brewfile_copy
+ln -nfs $CONFIG_DIR/Brewfile $HOME/Brewfile
+
+# Oh my ZSH theme
+_mv $HOME/.p10k.zsh $HOME/.p10k.zsh_copy
+ln -nfs $CONFIG_DIR/.p10k.zsh $HOME/.p10k.zsh
