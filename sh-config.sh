@@ -24,6 +24,9 @@ alias d=docker
 alias iub="sh $JCONFIG_DIR/install-ubuntu-tools.sh"
 alias imac="sh $JCONFIG_DIR/install-mac-tools.sh"
 
+# Brew
+alias bbd="brew bundle dump --force"
+
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
