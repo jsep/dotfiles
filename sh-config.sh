@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 export JCONFIG_DIR="$HOME/.jsep-config"
 
+export r=$HOME/repos/
 container=""
 # Aliases
 alias up="source $HOME/.zshrc" # Update current session with latest bashrc changes
@@ -31,6 +32,9 @@ alias bbd="brew bundle dump --force"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/etc/bash_completion.d/nvm" ] && . "$NVM_DIR/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Add jetbrians shell scripts to path
+export PATH=$PATH:$HOME/.jetbrains/
 
 # Oh my sh
 source $JCONFIG_DIR/oh-my-zsh.sh
