@@ -39,3 +39,6 @@ export PATH=$PATH:$HOME/.jetbrains/
 # Oh my sh
 source $JCONFIG_DIR/oh-my-zsh.sh
 
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/env
