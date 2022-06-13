@@ -25,9 +25,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<C-s>", ":w<CR>", {noremap=true})    -- Save buffer
-keymap("n", "<C-d>", "yyp", {noremap=true})       -- Save buffer
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)     -- Open file explorer   
+keymap("n", "<C-s>", ":wall<CR>", {noremap=true})    -- Save all buffer
+keymap("n", "<C-d>", "yyp", {noremap=true})       -- Duplicate lines
+keymap("n", "<leader>e", ":Lex 30<cr>", opts)     -- Open file explorer
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
