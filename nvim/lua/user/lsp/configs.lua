@@ -16,10 +16,14 @@ for _, server in pairs(servers) do
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
-	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
+  local patd = "user.lsp.settings." .. server
+	local has_custom_opts, server_custom_opts = pcall(require, patd)
 	if has_custom_opts then
-    vim.notify("settings for " .. server .. " not found.")
 	 	opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
 	end
 	lspconfig[server].setup(opts)
 end
+require("typescript").setup({
+    disable_commands = false, -- prevent the plugin from creating Vim commands
+    debug = false, -- enable debug logging for commands
+})

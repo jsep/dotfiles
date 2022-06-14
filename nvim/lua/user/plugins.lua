@@ -3,7 +3,7 @@ local fn = vim.fn
 
 
 -- My plugins here
-function install_plugins(use)
+local function install_plugins(use)
   -- auto update package manager
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
@@ -11,10 +11,17 @@ function install_plugins(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-  -- Colorschemes
-  use "LunarVim/Colorschemes" 
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "numToStr/Comment.nvim" -- Easily comment stuff
 
-  -- cmp plugins
+  -- Colorschemes
+  use "LunarVim/Colorschemes"
+
+  -- nvim-tree
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+
+  -- CMP plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -24,13 +31,32 @@ function install_plugins(use)
   use "hrsh7th/cmp-nvim-lua"
 
 
-  -- snippets
+  -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  --LSP
+  -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "jose-elias-alvarez/typescript.nvim" -- A minimal typescript-language-server integration plugin
+  -- use "jose-elias-alvarez/nvim-lsp-ts-utils" -- simple to use language server installer
+
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-fzf-native.nvim"
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"
+  use "nvim-treesitter/playground"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+
+ -- Git
+  use "lewis6991/gitsigns.nvim"
+
 end
 
 
