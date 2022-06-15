@@ -24,11 +24,21 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
-keymap("n", "<C-s>", ":wall<CR>", {noremap=true})    -- Save all buffer
-keymap("n", "<C-d>", "yyp", {noremap=true})       -- Duplicate lines
+-- Save
+keymap("n", "<C-s>", ":wall<CR>", { noremap = true }) -- Save all buffer
+keymap("n", "<C-S>", ":w<CR>", { noremap = true }) -- Save all buffer
+-- Duplicate
+keymap("n", "<C-d>", "yyp", { noremap = true }) -- Duplicate lines
+keymap("v", "<C-d>", "yyp", { noremap = true }) -- Duplicate lines
 -- keymap("n", "<leader>e", ":Lex 30<cr>", opts)     -- Open file explorer
-keymap("n", "q", ":q<cr>", opts)     -- Exit file
+-- Exit
+keymap("n", "q", ":q<cr>", opts) -- Exit file
+keymap("n", "<C-q>", ":qall<cr>", opts) -- Exit file
+-- Edit config
+local nvim_gui = "neovide"
+local config_path = "~/.jsep-config/nvim"
+keymap("n", "<C-i>", ":!" .. nvim_gui .. " " .. config_path .. "<cr>", opts)
+keymap("n", "<C-b>", ":source $MYVIMRC", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -55,13 +65,14 @@ keymap("n", "gs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
 keymap("n", "<C-e>", "<cmd>Telescope buffers<cr>", opts)
 
 -- NVimTree
-keymap("n", "<leader>e", ":NvimTreeToggle <cr>", opts)     -- Open file explorer
+keymap("n", "<leader>e", ":NvimTreeToggle <cr>", opts) -- Open file explorer
 -- INSERT --
 
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-
+keymap("i", "<C-s>", "<ESC>:wall<CR>i", { noremap = true }) -- Save all buffer
+keymap("i", "<C-q>", "<ESC>:qall<cr>", opts) -- Exit file
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -70,15 +81,16 @@ keymap("v", ">", ">gv", opts)
 -- Dont overload opts register
 keymap("v", "p", '"_dP', opts)
 
+keymap("v", "<C-d>", "yyp", { noremap = true }) -- Duplicate lines
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
+keymap("x", "<C-d>", "yyp", { noremap = true }) -- Duplicate lines
 -- Terminal --
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
