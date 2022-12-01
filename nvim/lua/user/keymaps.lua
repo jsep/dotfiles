@@ -37,8 +37,8 @@ keymap("n", "<C-q>", ":qall<cr>", opts) -- Exit file
 -- Edit config
 local nvim_gui = "neovide"
 local config_path = "~/.jsep-config/nvim"
-keymap("n", "<C-i>", ":!" .. nvim_gui .. " " .. config_path .. "<cr>", opts)
-keymap("n", "<C-b>", ":source $MYVIMRC", opts)
+-- keymap("n", "<C-i>", ":!" .. nvim_gui .. " " .. config_path .. "<cr>", opts)
+-- keymap("n", "<C-b>", ":source $MYVIMRC", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -94,3 +94,49 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Hop
+vim.api.nvim_set_keymap(
+	"n",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+	{}
+)
+-- vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap(
+	"o",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
+	{}
+)
+-- vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+vim.api.nvim_set_keymap(
+	"",
+	"t",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+	{}
+)
+vim.api.nvim_set_keymap(
+	"",
+	"T",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+	{}
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>h",
+	"<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>",
+	{}
+)
+vim.api.nvim_set_keymap(
+	"v",
+	"<leader>h",
+	"<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>",
+	{}
+)
+vim.api.nvim_set_keymap(
+	"o",
+	"<leader>h",
+	"<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END, inclusive_jump = true })<cr>",
+	{}
+)

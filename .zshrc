@@ -36,3 +36,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/juan/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# pnpm
+export PNPM_HOME="/Users/juan/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

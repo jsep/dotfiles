@@ -14,9 +14,17 @@ local function install_plugins(use)
 	-- lualine
 	use("nvim-lualine/lualine.nvim")
 
+	-- Hop Easymotion like plugin
+	use({
+		"phaazon/hop.nvim",
+		branch = "v1",
+	})
 	-- Colorschemes
 	--use("LunarVim/Colorschemes")
 	use("lunarvim/darkplus.nvim")
+
+	-- github copilot
+	use("github/copilot.vim")
 
 	-- nvim-tree
 	use("kyazdani42/nvim-web-devicons")
@@ -44,7 +52,7 @@ local function install_plugins(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/typescript.nvim") -- A minimal typescript-language-server integration plugin
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	-- use "jose-elias-alvarez/nvim-lsp-ts-utils" -- simple to use language server installer
+	use("jose-elias-alvarez/nvim-lsp-ts-utils") -- simple to use language server installer
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

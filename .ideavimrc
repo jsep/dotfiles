@@ -1,15 +1,18 @@
 "" Source your .vimrc
-source ~/.vimrc
+" source ~/.vimrc
+imap jk <Esc>
+imap kj <Esc>
+
 set NERDTree
 set surround
 set multiple-cursors
 set commentary
+set easymotion
 
-
-set clipboard+=unnamed
-set clipboard+=ideaput
+set clipboard+=unnamedplus
+"set clipboard+=ideaput
 """ Idea specific settings
-set ideajoin
+" set ideajoin
 set ideamarks
 set ideastatusicon=gray
 set idearefactormode=keep
@@ -47,13 +50,14 @@ map (( <Action>(CollapseAllRegions)
 map ( <Action>(CollapseRegion)
 map ) <Action>(ExpandRegion)
 " go to declaration / find / navitagion
-map gb <Action>(Back)
+map H <Action>(Back)
 "map gc <Action>(GotoClass)
 map gd <Action>(GotoDeclaration)
-map gf <Action>(Forward)
+map L <Action>(Forward)
 map gm <Action>(FileStructurePopup)
 map gn <Action>(Forward)
-map gs <Action>(GotoSymbol)
+map gs <Action>(GotoSuperMethod)
+map gi <Action>(GotoImplementation)
 map gv <Action>(GotoDeclaration)
 map F <Action>(SearchEverywhere)
 map fc <Action>(GotoClass)
@@ -70,10 +74,11 @@ map Rc <Action>(Refactorings.QuickListPopupAction)
 
 "Movements "
 map mv <Action>(Move)
-map mU <Action>(MoveStatementUp)
-map mu <Action>(MoveLineUp)
-map md <Action>(MoveLineDown)
-map mD <Action>(MoveStatementDown)
+map J <Action>(MoveStatementUp)
+"map J <Action>(MoveLineUp)
+"map K <Action>(MoveLineDown)
+map K <Action>(MoveStatementDown)
+
 
 "Show "
 map sa <Action>(ShowIntentionActions)
@@ -86,8 +91,8 @@ map sh <Action>(QuickJavaDoc)
 map si <Action>(CodeCompletion)
 
 " Errors "
-map ne <Action>(GotoNextError)
-map nE <Action>(GotoPreviousError)
+map gne <Action>(GotoNextError)
+map gnE <Action>(GotoPreviousError)
 
 "Tools"
 nmap st <Action>(ActivateTerminalToolWindow)
@@ -97,7 +102,10 @@ vmap t <Action>(de.netnexus.CamelCasePlugin.ToggleCamelCase)
 "Others"
 map z <Action>(EditorSelectWord)
 map Z <Action>(EditorUnSelectWord)
+"Vcs"
 map U <Action>(Vcs.RollbackChangedLines)
+map gnc <Action>(VcsShowNextChangeMarker)
+map gnC <Action>(VcsShowPrevChangeMarker)
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 

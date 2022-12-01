@@ -13,6 +13,7 @@ git config --global user.name  "Juan Sepulveda"
 git config --global alias.ac '!git add -A && git commit -m'
 git config --global alias.pl '!git pull origin $(git rev-parse --abbrev-ref HEAD)'
 git config --global alias.ph '!git push origin $(git rev-parse --abbrev-ref HEAD)'
+git config --global alias.po 'pull origin'
 git config --global alias.pld 'pull origin devel'
 git config --global alias.phd 'push origin devel'
 git config --global alias.plm 'pull origin master'
@@ -33,6 +34,11 @@ git config --global alias.Dbr '!f() { git br -D $1; git push origin :$1;}; f'
 git config --global alias.ff 'diff --word-diff'
 git config --global alias.dc 'diff --cached'
 git config --global alias.rb rebase
+git config --global alias.w worktree
+git config --global alias.wl 'w list'
+git config --global alias.wa 'w add'
+git config --global alias.wr 'w remove'
+git config --global alias.tt '!echo $GIT_PREFIX'
 
 # # Add aliases for some advanced git commands
 git config --global alias.rlog reflog
