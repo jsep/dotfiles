@@ -8,6 +8,7 @@ set surround
 set multiple-cursors
 set commentary
 set easymotion
+set quickscope
 
 set clipboard+=unnamedplus
 "set clipboard+=ideaput
@@ -23,10 +24,12 @@ set number
 
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
-" set scrolloff=999
+set scrolloff=999
 
 " Do incremental searching.
 set incsearch
+" Quickscope"
+let g:qs_highlight_on_keys = ['f', 'F', 't']
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -59,11 +62,7 @@ map gn <Action>(Forward)
 map gs <Action>(GotoSuperMethod)
 map gi <Action>(GotoImplementation)
 map gv <Action>(GotoDeclaration)
-map F <Action>(SearchEverywhere)
-map fc <Action>(GotoClass)
-map ff <Action>(GotoFile)
-map fm <Action>(FileStructurePopup)
-map fs <Action>(GotoSymbol)
+" map F <Action>(SearchEverywhere)
 
 " Refactor "
 map R <Action>(Refactorings.QuickListPopupAction)
@@ -74,10 +73,10 @@ map Rc <Action>(Refactorings.QuickListPopupAction)
 
 "Movements "
 map mv <Action>(Move)
-map J <Action>(MoveStatementUp)
+map K <Action>(MoveStatementUp)
 "map J <Action>(MoveLineUp)
 "map K <Action>(MoveLineDown)
-map K <Action>(MoveStatementDown)
+map J <Action>(MoveStatementDown)
 
 
 "Show "
