@@ -29,6 +29,7 @@ git config --global alias.cia 'commit --amend -m'
 git config --global alias.co checkout
 git config --global alias.cob 'checkout -b'
 git config --global alias.br branch
+git config --global alias.brl 'branch -v --sort=-committerdate' # list branches sort asc
 git config --global alias.dbr '!f() { git br -d $1; git push origin :$1;}; f'
 git config --global alias.Dbr '!f() { git br -D $1; git push origin :$1;}; f'
 git config --global alias.ff 'diff --word-diff'

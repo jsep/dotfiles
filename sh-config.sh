@@ -46,3 +46,26 @@ source $JCONFIG_DIR/oh-my-zsh.sh
 
 # Rust
 export PATH=$PATH:$HOME/.cargo/env
+
+# python
+export PATH=$PATH:$HOME/.local/bin
+
+# Ruby
+eval "$(rbenv init - zsh)"
+
+## Bins for arro
+export PATH=$PATH:/nix/store/9xwbpjyw0sswxix1q2d1ij1dr75ywsnc-just-1.37.0/bin
+export PATH=$PATH:/nix/store/88mpjwmyckhg1fjdcad2l7pg68w1k20v-sops-3.9.1/bin
+
+function auto_nix_develop() {
+    if [[ "$PWD" == "/Users/juan/repos/arro/arro-frontend/arrofinance" ]]; 
+        then
+        echo "Running 'nix develop' in $PWD"
+        nix develop -c "zsh"
+    fi
+}
+
+# Hook for whenever the directory changes
+#autoload -Uz add-zsh-hook
+#add-zsh-hook chpwd auto_nix_develop
+# auto_nix_develop

@@ -6,6 +6,7 @@ set autoindent                      " Respect indentation when starting a new li
 set expandtab                       " Expand tabs to spaces. Essential in Python.
 set tabstop=4                       " Number of spaces tab is counted for.
 set shiftwidth=4                    " Number of spaces to use for autoindent.
+set number
 
 set backspace=2                     " Fix backspace behavior on most terminals.
 

@@ -9,9 +9,10 @@ set multiple-cursors
 set commentary
 set easymotion
 set quickscope
+set nowrap
 
-set clipboard+=unnamedplus
-"set clipboard+=ideaput
+" set clipboard+=unnamedplus
+set clipboard+=ideaput
 """ Idea specific settings
 " set ideajoin
 set ideamarks
@@ -46,7 +47,7 @@ map mx <A-x>
 map mp <A-p>
 
 "Work mode"
-map SEN <Action>(ToggleFullScreen) <Action>(EditorToggleShowGutterIcons) <Action>(HideActiveWindow)
+" map SEN <Action>(ToggleFullScreen) <Action>(EditorToggleShowGutterIcons) <Action>(HideActiveWindow)
 
 " Collapse "
 map (( <Action>(CollapseAllRegions)
@@ -77,7 +78,9 @@ map K <Action>(MoveStatementUp)
 "map J <Action>(MoveLineUp)
 "map K <Action>(MoveLineDown)
 map J <Action>(MoveStatementDown)
-
+" Next usage"
+map gn <Action>(GotoNextElementUnderCaretUsage)
+map gN <Action>(GotoPrevElementUnderCaretUsage)
 
 "Show "
 map sa <Action>(ShowIntentionActions)
@@ -90,8 +93,8 @@ map sh <Action>(QuickJavaDoc)
 map si <Action>(CodeCompletion)
 
 " Errors "
-map gne <Action>(GotoNextError)
-map gnE <Action>(GotoPreviousError)
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
 
 "Tools"
 nmap st <Action>(ActivateTerminalToolWindow)
@@ -103,12 +106,12 @@ map z <Action>(EditorSelectWord)
 map Z <Action>(EditorUnSelectWord)
 "Vcs"
 map U <Action>(Vcs.RollbackChangedLines)
-map gnc <Action>(VcsShowNextChangeMarker)
-map gnC <Action>(VcsShowPrevChangeMarker)
+" map gnc <Action>(VcsShowNextChangeMarker)
+" map gnC <Action>(VcsShowPrevChangeMarker)
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 
-"" Map <leader>d to start debug
+"" Map <leader>d to start debu
 "map <leader>d <Action>(Debug)
 
 "" Map \b to toggle the breakpoint on the current line
@@ -116,3 +119,7 @@ map gnC <Action>(VcsShowPrevChangeMarker)
 
 
 " Find more examples here: https://jb.gg/share-ideavimrc
+
+" Multicursor
+map <C-j> <Action>(EditorCloneCaretBelow)
+map <C-k> <Action>(EditorCloneCaretAbove)
